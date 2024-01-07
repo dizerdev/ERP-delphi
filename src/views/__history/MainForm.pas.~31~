@@ -1,0 +1,55 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    RadioGroup1: TRadioGroup;
+    RadioButton1: TRadioButton;
+    Button1: TButton;
+    ListBox1: TListBox;
+    procedure Button1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+  texto: string;
+  valorInteiro: Integer;
+begin
+  // Capturar dados dos inputs
+  texto := Edit1.Text;
+  try
+    valorInteiro := StrToInt(Edit2.Text);
+  except
+    on EConvertError do
+    begin
+      ShowMessage('Por favor, insira um valor inteiro válido.');
+      Exit;
+    end;
+  end;
+
+  // Adicionar dados à lista
+  ListBox1.Items.Add('Texto: ' + texto + ' - Inteiro: ' + IntToStr(valorInteiro) +
+    ' - Opção: ' + RadioGroup1.Items[RadioGroup1.ItemIndex]);
+
+end;
+
+end.

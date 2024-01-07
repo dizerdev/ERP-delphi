@@ -1,0 +1,59 @@
+unit view.principal;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+type
+  TApp = class(TForm)
+    Panel1: TPanel;
+    Button1: TButton;
+    Panel2: TPanel;
+    Panel4: TPanel;
+    Panel3: TPanel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    procedure Button1Click(Sender: TObject);
+
+  end;
+
+  private
+  { Private declarations }
+  TVenda: class
+    private
+    FIDVenda: Integer;
+    FData: TDateTime;
+    FListaVendaItem: TObjectList<TVendaItem>;
+  public
+    { Public declarations }
+      property IDVenda: Integer read FIDVenda write FIDVenda;
+      property Data   : TDateTime read FData write FData;
+      property ListaVendaItem: TObjectList<TVendaItem> read FListaVendaItem write FListaVendaItem;
+
+      constructor Create;
+      destructor Destroy override;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+end.
