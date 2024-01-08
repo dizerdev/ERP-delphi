@@ -79,6 +79,7 @@ type
     Image5: TImage;
     Image6: TImage;
     Image7: TImage;
+    Label9: TLabel;
     procedure btnClientClick(Sender: TObject);
     procedure btnProductsClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);

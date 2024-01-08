@@ -2452,7 +2452,6 @@ object ViewMain: TViewMain
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 306
     object lblCalcNumB: TLabel
       Left = 622
       Top = 92
@@ -2588,6 +2587,13 @@ object ViewMain: TViewMain
       Width = 81
       Height = 15
       Caption = 'Lista de tarefas:'
+    end
+    object Label9: TLabel
+      Left = 64
+      Top = 122
+      Width = 32
+      Height = 15
+      Caption = 'Email:'
     end
     object numBoxA: TNumberBox
       Left = 679
